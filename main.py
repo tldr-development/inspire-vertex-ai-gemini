@@ -18,11 +18,19 @@ def predict(data: dict):
     token = data.get("token")
     # get environment variable
     if token != os.environ.get("TOKEN"):
-        return {"data": "token error"}
+        return {"data": "token error", "code": 400, "message": "token error"}
     promt = data.get("promt")
     # promt is json to string
     if type(promt) == dict:
         promt = str(promt)
+
+    # promt condition
+    if promt is None:
+        return {"data": "promt is None", "code": 400, "message": "promt is None"}
+    if len(promt) > 2048:
+        return {"data": "promt is too long", "code": 400, "message": "promt is too long"}
+    if len(promt) < 1:
+        return {"data": "promt is too short", "code": 400, "message": "promt is too short"}
 
     data = generate(promt)
     return data
