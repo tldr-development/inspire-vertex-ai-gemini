@@ -1,5 +1,7 @@
 # VertexAi Gemini
 Inspire 에서 사용할 vertext ai 
+cloud run에 서비스하고 
+Golang 서버 Inspire 에서 요청을 받아서 생성형 AI 모델을 사용해서 텍스트 생성
 
 python fast api
 
