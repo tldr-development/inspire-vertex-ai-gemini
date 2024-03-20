@@ -1,5 +1,5 @@
 # VertexAi Gemini
-Inspire
+Inspire 에서 사용할 vertext ai 
 
 python fast api
 
